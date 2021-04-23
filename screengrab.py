@@ -1,8 +1,22 @@
 import pyautogui
 import time
+import os
 dir = "C:/Users/SERVER3-PC/Desktop/SFAlert/images/" # Set this directory
 # GCW Factional Presence Window must be 650 pixels wide
-def grabScreenInfo():
+
+def clearImagesSG():
+	try:
+		dir = 'images'
+		if len(os.listdir(dir)) > 0:
+			print("Deleting images...")
+			for f in os.listdir(dir):
+				rmvpth = os.path.join(dir, f)
+				os.remove(rmvpth)
+				print("Deleting file: " + rmvpth)
+	except:
+		print("Error while deleting files")
+
+def grabScreenInfo(retry=False):
 	y = 0
 	try:
 		windowtopleft = pyautogui.locateOnScreen('refimg.png',confidence=0.5,region=(0,0,600,250))
@@ -31,4 +45,13 @@ def grabScreenInfo():
 			y = y + 1
 		print("Done")
 	except:
-		print("Could not find window")
+		if retry == True:
+			print("Could not find window after retry")
+			clearImagesSG()
+		else:
+			delay = 2
+			print("Could not find window, trying again in " + str(delay) + " seconds.")
+			time.sleep(delay)
+			grabScreenInfo(True)
+
+grabScreenInfo()
