@@ -24,7 +24,7 @@ impLast = list()
 rebLast.append(datetime.utcnow())
 impLast.append(datetime.utcnow())
 
-channels = [672912582247710734, 833815365708152843, 834224098858106890]
+channels = [] #Channel IDS go here
 
 async def sendMessage(message):
 	for c in channels:

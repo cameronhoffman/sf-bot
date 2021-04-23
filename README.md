@@ -13,3 +13,5 @@ Dependancies:
 - pytesseract
 - pillow
 - asyncio
+
+** Note: Game UI pallete must be set to 'Destroyer'
