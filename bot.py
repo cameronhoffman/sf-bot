@@ -24,7 +24,7 @@ impLast = list()
 rebLast.append(datetime.utcnow())
 impLast.append(datetime.utcnow())
 
-channels = [] #Channel IDS go here
+channels = [672912582247710734, 833815365708152843, 834224098858106890]
 
 async def sendMessage(message):
 	for c in channels:
@@ -168,7 +168,7 @@ async def rebel_restuss_task():
 			rebembed=discord.Embed(title="Rebels in Restuss :boom:", url="", description="Rebels detected in Restuss\nIf you do not want to receieve notifications, right click on the channel and mute it", color=discord.Color.red())
 			rebembed.set_footer(text="For command support type !help")
 			rebembed.timestamp = datetime.utcnow()
-			rebembed.set_thumbnail(url="https://i.imgur.com/tQuxcCR.png")
+			rebembed.set_thumbnail(url="https://i.imgur.com/f1G1mDf.png")
 			rebembed.set_author(name="Restuss Alert", url="", icon_url="https://i.imgur.com/JAorro3.png")
 			await sendEmbed(rebembed)
 		else:
@@ -202,7 +202,7 @@ async def imperial_restuss_task():
 			impembed=discord.Embed(title="Imperials in Restuss :boom:", url="", description="Imperials detected in Restuss\nIf you do not want to receieve notifications, right click on the channel and mute it", color=discord.Color.blue())
 			impembed.set_footer(text="For command support type !help")
 			impembed.timestamp = datetime.utcnow()
-			impembed.set_thumbnail(url="https://i.imgur.com/4gTiklE.png")
+			impembed.set_thumbnail(url="https://i.imgur.com/r1Ab8bT.png")
 			impembed.set_author(name="Restuss Alert", url="", icon_url="https://i.imgur.com/JAorro3.png")
 			await sendEmbed(impembed)
 		else:
